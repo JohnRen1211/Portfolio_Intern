@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="/images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+    <title>My Portfolio</title>
+  </head>
+  <body class="font-sans text-gray-900 bg-gradient-to-r from-red-300 via-red-200 to-red-100">
+<!-- Desktop Navigation -->
+<nav id="desktop-nav" class="hidden md:flex justify-between items-center p-4  text-white border-b border-black bg-black">
+  <div class="text-xl md:text-4xl font-bold">
+    <img src="/images/Logo1.png" alt="John's Profile Picture" width="60" height="40">
+  </div>
+  <div class="text-xl md:text-4xl font-bold flex-1 text-center">My portfolio</div>
+  <ul class="md:text-2xl flex space-x-4">
+    <li><a href="#desktop-nav" class="hover:underline text-red-600 ">Home</a></li>
+    <li><a href="#about" class="hover:underline">About</a></li>
+    <li><a href="#experience" class="hover:underline">Experience</a></li>
+    <li><a href="#projects" class="hover:underline">Projects</a></li>
+    <li><a href="#contact" class="hover:underline">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- Mobile Navigation -->
+<nav id="hamburger-nav" class="md:hidden p-4 bg-gray-800 text-white">
+  <div class="flex items-center justify-between">
+    <div class="text-xl font-bold">My Portfolio</div>
+    <div class="relative">
+      <div class="hamburger-icon flex flex-col space-y-1 cursor-pointer" onclick="toggleMenu()">
+        <span class="w-6 h-0.5 bg-white"></span>
+        <span class="w-6 h-0.5 bg-white"></span>
+        <span class="w-6 h-0.5 bg-white"></span>
+      </div>
+      <div class="menu-links absolute top-full right-0 bg-gray-800 text-white w-48 mt-2 hidden" id="menu-links" style="z-index: 1;">
+        <ul class="flex flex-col space-y-2">
+          <li><a href="#about" class="block py-2 px-4 hover:bg-gray-700" onclick="toggleMenu()">About</a></li>
+          <li><a href="#experience" class="block py-2 px-4 hover:bg-gray-700" onclick="toggleMenu()">Experience</a></li>
+          <li><a href="#projects" class="block py-2 px-4 hover:bg-gray-700" onclick="toggleMenu()">Projects</a></li>
+          <li><a href="#contact" class="block py-2 px-4 hover:bg-gray-700" onclick="toggleMenu()">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</nav>
+
+
+<!-- Profile Section -->
+<section id="profile" class="flex flex-col md:flex-row justify-center items-center bg-gradient-to-r from-red-300 via-red-200 to-red-100 h-screen">
+  <!-- Profile Picture -->
+  <div class="section__pic-container w-1/2 md:w-1/5 pr-4 mb-4 md:mb-0">
+    <img src="/images/pic1.png" alt="John Doe profile picture" class="w-full h-auto rounded-full bg-gray-100 hover:scale-110 transition transform duration-300 ease-in-out md:ml-1" />
+  </div>
+
+  <!-- Text and Buttons -->
+  <div class="md:w-2/3 flex flex-col justify-center items-center md:items-start">
+    <p class="text-xl md:text-4xl font-bold">Hello, I'm</p>
+    <h1 class="text-2xl md:text-6xl font-bold mb-2 text-red-600">John Jaylo</h1>
+    <p class="text-xl md:text-3xl md:pl-0 mb-4 text-justify px-4">Hey there! I'm a computer engineering student with a passion for building 
+    innovative solutions. As an inspiring Computer Engineer, I'm excited to showcase my projects and experiences
+    in this portfolio. From coding languages  to embedded systems, I'm constantly learning and exploring new ways
+    to apply my skills. Browse through my projects and contact me if you need assitance in any project</p>
+
+    <!-- Buttons -->
+    <div class="btn-container flex flex-col md:flex-row justify-center md:justify-start space-y-2 md:space-y-0 md:space-x-4">
+      <button
+      class="btn bg-blue-500 text-white py-2 px-4 hover:bg-white hover:text-black rounded-full md:p-4 md:text-xl md:font-bold"
+      onclick="window.open('/images/assets/CVE.pdf', '_blank')">
+       Download CV
+    </button>
+    
+        
+      </button>
+      <button class="btn bg-green-500 text-white py-2 px-4 hover:bg-white hover:text-black rounded-full md:p-4 md:text-xl md:font-bold" onclick="location.href='./#contact'">
+        Contact Info
+      </button>
+
+      <!-- Social Icons (small screen) -->
+      <div class="flex flex-row justify-center space-x-4 mt-4 md:hidden">
+        <img
+          src="/images/facebook.png"
+          alt="My Facebook profile"
+          class="w-8 h-8 cursor-pointer"
+          onclick="location.href='https://www.facebook.com/johnrengelo.jaylo'"
+        />
+        <img
+          src="/images/linkedin.png"
+          alt="My LinkedIn profile"
+          class="w-8 h-8 cursor-pointer"
+          onclick="location.href='https://linkedin.com/'"
+        />
+        <img
+          src="/images/github.png"
+            alt="My Github profile"
+            class="w-8 h-8 cursor-pointer"
+          onclick="location.href='https://github.com/JohnRen1211'"
+        />
+      </div>
+    </div>
+  </div>
+
+  <!-- Social Icons (big screen) -->
+  <div id="socials-container" class="hidden md:flex md:flex-col md:items-end md:space-y-4 mt-4 md:w-1/5 pr-14 ">
+    <img
+      src="/images/facebook.png"
+      alt="My Facebook profile"
+      class="w-10 h-10 cursor-pointer hover:scale-110 transition transform duration-300 ease-in-out"
+      onclick="location.href='https://www.facebook.com/johnrengelo.jaylo'"
+    />
+    <img
+      src="/images/linkedin.png"
+      alt="My LinkedIn profile"
+      class="w-10 h-10 cursor-pointer hover:scale-110 transition transform duration-300 ease-in-out"
+      onclick="location.href='https://linkedin.com/'"
+    />
+    <img
+      src="/images/github.png"
+      alt="My Github profile"
+      class="w-10 h-10 cursor-pointer hover:scale-110 transition transform duration-300 ease-in-out"
+      onclick="location.href='https://github.com/JohnRen1211'"
+    />
+  </div>
+</section>
+
+<!-- About Section -->
+<section id="about" class="p-8 md:flex md:flex-col">
+  <div class="text-center">
+    <p class="text-2xl font-medium">Get To Know More</p>
+    <h1 class="text-4xl font-bold">About Me</h1>
+  </div>
+  <div class="md:flex md:flex-row">
+    <div class="md:w-1/3 mb-8 md:mb-12">
+      <!-- Picture 2 -->
+      <img src="/images/pic2.png" alt="Profile picture" class="rounded-full w-full" />
+    </div>
+    <div class="md:w-2/3">
+      <div class="md:flex md:justify-between mb-2 md:gap-8">
+        <div class="bg-black text-white p-4 rounded-lg shadow-md mb-4 md:mb-0 w-full md:w-1/2">
+          <img src="/images/experience1.png" alt="Experience icon" class="w-8 h-8 mb-2" />
+          <h3 class="text-xl font-semibold">Experience</h3>
+          <ul>
+            <li>Frontend Development</li>
+            <li>Backend Development</li>
+            <li>Network Security</li>
+            <li>Hardware Assembly</li>
+          </ul>
+        </div>
+        <div class="bg-black text-white p-4 rounded-lg shadow-md w-full md:w-1/2">
+          <img src="/images/education1.png" alt="Education icon" class="w-8 h-8 mb-2" />
+          <h3 class="text-xl font-semibold">Education</h3>
+          <ul>
+            <li>Primary School Graduate</li>
+            <li>Secondary School Graduate</li>
+            <li>Bachelor of Science in Computer Engineering (BSCpE)</li>
+          </ul>
+        </div>
+      </div>
+      <div class="text-container">
+        <p class="text-xl md:text-3xl text-justify px-4">
+          Hi! I'm John, an aspiring Computer Engineer. I live in Barangay Dalig, Antipolo City, here in the Philippines. I started my career in Computer Engineering as a student at "Polytechnic University of the Philippines" and since then, I've been working on things related to technology. I have a passion for engineering, programming, and creating websites that help people succeed in their dreams.
+        </p>
+      </div>
+      <!-- Road map picture -->
+      <div class="w-full md:w-2/3 lg:w-1/2 mx-auto mb-8">
+        <img src="/images/Journey2.png" alt="journey" class="w-full h-auto object-contain rounded-xl" />
+      </div>
+    </div>
+  </div>
+  <div class="text-center">
+    <img
+      src="/images/arrow.png"
+      alt="Arrow icon"
+      class="w-8 h-8 cursor-pointer mx-auto"
+      onclick="location.href='./#experience'"
+    />
+  </div>
+</section>
+
+
+ 
+<!-- Experience Section -->
+<section id="experience" class="p-8 md:h-screen">
+  <p class="text-lg font-medium text-center">Explore My</p>
+  <h1 class="text-4xl font-bold text-center mb-8">Experience</h1>
+  
+  <div class="experience-details-container grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+    <!-- Frontend Development -->
+    <div class="details-container bg-black text-white p-4 rounded-lg shadow-md">
+      <h2 class="text-2xl font-semibold mb-4">Frontend Development</h2>
+      <div class="article-container">
+        <article class="space-y-4">
+          <div class="flex items-center">
+            <img src="/images/checkmark1.png" alt="Experience icon" class="w-6 h-6 mr-2" />
+            <div>
+              <h3 class="text-lg font-semibold">HTML</h3>
+              <p>Experienced</p>
+            </div>
+          </div>
+          <div class="flex items-center">
+            <img src="/images/checkmark1.png" alt="Experience icon" class="w-6 h-6 mr-2" />
+            <div>
+              <h3 class="text-lg font-semibold">CSS</h3>
+              <p>Experienced</p>
+            </div>
+          </div>
+          <div class="flex items-center">
+            <img src="/images/checkmark1.png" alt="Experience icon" class="w-6 h-6 mr-2" />
+            <div>
+              <h3 class="text-lg font-semibold">Tailwind</h3>
+              <p>Experienced</p>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+    <!-- Backend Development -->
+    <div class="details-container bg-black text-white p-4 rounded-lg shadow-md">
+      <h2 class="text-2xl font-semibold mb-4">Backend Development</h2>
+      <div class="article-container">
+        <article class="space-y-4">
+          <div class="flex items-center">
+            <img src="/images/checkmark1.png" alt="Experience icon" class="w-6 h-6 mr-2" />
+            <div>
+              <h3 class="text-lg font-semibold">PHP</h3>
+              <p>Experienced</p>
+            </div>
+          </div>
+          <div class="flex items-center">
+            <img src="/images/checkmark1.png" alt="Experience icon" class="w-6 h-6 mr-2" />
+            <div>
+              <h3 class="text-lg font-semibold">MongoDB</h3>
+              <p>Experienced</p>
+            </div>
+          </div>
+          <div class="flex items-center">
+            <img src="/images/checkmark1.png" alt="Experience icon" class="w-6 h-6 mr-2" />
+            <div>
+              <h3 class="text-lg font-semibold">XAMPP</h3>
+              <p>Experienced</p>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+    <!-- Networks -->
+    <div class="details-container bg-black text-white p-4 rounded-lg shadow-md">
+      <h2 class="text-2xl font-semibold mb-4">Networks</h2>
+      <div class="article-container">
+        <article class="space-y-4">
+          <div class="flex items-center">
+            <img src="/images/checkmark1.png" alt="Experience icon" class="w-6 h-6 mr-2" />
+            <div>
+              <h3 class="text-lg font-semibold">CISCO</h3>
+              <p>Experienced</p>
+            </div>
+          </div>
+          <div class="flex items-center">
+            <img src="/images/checkmark1.png" alt="Experience icon" class="w-6 h-6 mr-2" />
+            <div>
+              <h3 class="text-lg font-semibold">Routers</h3>
+              <p>Experienced</p>
+            </div>
+          </div>
+          <div class="flex items-center">
+            <img src="/images/checkmark1.png" alt="Experience icon" class="w-6 h-6 mr-2" />
+            <div>
+              <h3 class="text-lg font-semibold">Switches</h3>
+              <p>Experienced</p>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+    <!-- Hardware -->
+    <div class="details-container bg-black text-white p-4 rounded-lg shadow-md">
+      <h2 class="text-2xl font-semibold mb-4">Hardware</h2>
+      <div class="article-container">
+        <article class="space-y-4">
+          <div class="flex items-center">
+            <img src="/images/checkmark1.png" alt="Experience icon" class="w-6 h-6 mr-2" />
+            <div>
+              <h3 class="text-lg font-semibold">Arduino</h3>
+              <p>Experienced</p>
+            </div>
+          </div>
+          <div class="flex items-center">
+            <img src="/images/checkmark1.png" alt="Experience icon" class="w-6 h-6 mr-2" />
+            <div>
+              <h3 class="text-lg font-semibold">Assembly</h3>
+              <p>Experienced</p>
+            </div>
+          </div>
+          <div class="flex items-center">
+            <img src="/images/checkmark1.png" alt="Experience icon" class="w-6 h-6 mr-2" />
+            <div>
+              <h3 class="text-lg font-semibold">Circuits</h3>
+              <p>Experienced</p>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+    <!-- exp1 -->
+    <div class="flex justify-center mb-4">
+      <img src="/images/exp1.png" alt="Project 1" class="w-full h-auto rounded-lg" />
+    </div>
+    <!-- exp2 -->
+    <div class="flex justify-center mb-4">
+      <img src="/images/exp2.png" alt="Project 2" class="w-full h-auto rounded-lg" />
+    </div>
+    <!-- exp3 -->
+    <div class="flex justify-center mb-4">
+      <img src="/images/exp3.png" alt="Project 3" class="w-full h-auto rounded-lg" />
+    </div>
+    <!-- exp4 -->
+    <div class="flex justify-center mb-4">
+      <img src="/images/exp4.png" alt="Project 4" class="w-full h-auto rounded-lg" />
+    </div>
+  </div>
+
+  <!-- Centering the Arrow Icon -->
+  <div class="flex justify-center mt-2">
+    <img
+      src="/images/arrow.png"
+      alt="Arrow icon"
+      class="w-8 h-8 cursor-pointer"
+      onclick="location.href='./#projects'"
+    />
+  </div>
+</section>
+
+
+      </section>
+    
+    <!-- Projects Section -->
+    <section id="projects" class="p-8 mt-10 md:h-screen">
+      <p class="text-lg font-medium text-center">Browse My Recent</p>
+      <h1 class="text-4xl font-bold text-center mb-8">Projects</h1>
+      <div class="experience-details-container grid grid-cols-1 md:grid-cols-3 gap-8">
+        <!--Projects container-->
+        <div class="details-container bg-black text-white p-4 rounded-lg shadow-md">
+          <div class="article-container mb-4 flex justify-center">
+            <img src="/images/Project1.2.png" alt="Project 1" class=" h-auto rounded-lg" />
+          </div>
+          <h2 class="text-2xl font-semibold mb-4">Project 1</h2>
+          <div class="btn-container flex space-x-2 bg-blak  ">
+            <button class="border-solid border-white border-2 text-white px-6 py-2  tracking-widest hover:bg-blue-300 hover:text-black rounded-full " onclick="location.href='https://github.com/JohnRen1211/ChillCoffeeShop.git'">
+              Github
+            </button>
+            <button class="border-solid border-white border-2 text-white px-4 py-2 text-l  tracking-widest hover:bg-blue-300 hover:text-black rounded-full" onclick="location.href='https://github.com/'">
+              Documentation
+            </button>
+          </div>  
+        </div>
+        <!--Project 2-->
+        <div class="details-container bg-black text-white p-4 rounded-lg shadow-md ">
+          <div class="article-container mb-4 flex justify-center">
+            <img src="/images/Project2.2.png" alt="Project 1" class=" h-auto rounded-lg" />
+          </div>
+          <h2 class="text-2xl font-semibold mb-4">Project 2</h2>
+          <div class="btn-container flex space-x-2">
+            <button class="border-solid border-white border-2 text-white px-6 py-2  tracking-widest hover:bg-blue-300 hover:text-black rounded-full" onclick="location.href='https://github.com/JohnRen1211/CodeCrusher.git'">
+              Github
+            </button>
+            <button class="border-solid border-white border-2 text-white px-4 py-2 text-l  tracking-widest hover:bg-blue-300 hover:text-black rounded-full" onclick="location.href='https://github.com/'">
+              Documentation
+            </button>
+          </div>
+        </div>
+        <!--Project 3-->
+        <div class="details-container bg-black text-white p-4 rounded-lg shadow-md">
+          <div class="article-container mb-4 flex justify-center">
+            <img src="/images/project3.png" alt="Project 1" class=" h-auto rounded-lg" />
+          </div>
+          <h2 class="text-2xl font-semibold mb-4">Project 3</h2>
+          <div class="btn-container flex space-x-2">
+            <button class="border-solid border-white border-2 text-white px-6 py-2  tracking-widest hover:bg-blue-300 hover:text-black rounded-full" onclick="location.href='https://github.com/JohnRen1211/Simple_Calculator.git'">
+              Github
+            </button>
+            <button class="border-solid border-white border-2 text-white px-4 py-2 text-l  tracking-widest hover:bg-blue-300 hover:text-black rounded-full" onclick="location.href='https://github.com/'">
+              Documentation
+            </button>
+          </div>
+        </div>
+        <!-- Repeat project blocks as needed -->
+      </div>
+      <div class="text-center mt-8">
+        <img
+          src="/images/arrow.png"
+          alt="Arrow icon"
+          class="w-8 h-8 cursor-pointer mx-auto"
+          onclick="location.href='./#contact'"
+        />
+      </div>
+    </section>
+<!-- Contact Section -->
+<section id="contact" class="p-8 bg-gray-300 h-screen">
+  <p class="text-lg font-medium text-center mb-2">Get in Touch</p>
+  <h1 class="text-4xl font-bold text-center mb-8">Contact Me</h1>
+
+  <div class="flex flex-col items-center space-y-8">
+
+    <!-- Contact Form -->
+    <div class="w-full max-w-md bg-white p-8 rounded-lg shadow-lg">
+      <form action="mailto:examplemail@gmail.com" method="post" enctype="text/plain">
+        <div class="mb-4">
+          <label for="name" class="block text-sm font-medium text-gray-700">Name</label>
+          <input type="text" id="name" name="name" required
+            class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm" />
+        </div>
+
+        <div class="mb-4">
+          <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
+          <input type="email" id="email" name="email" required
+            class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm" />
+        </div>
+
+        <div class="mb-4">
+          <label for="message" class="block text-sm font-medium text-gray-700">Message</label>
+          <textarea id="message" name="message" rows="4" required
+            class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"></textarea>
+        </div>
+
+        <button type="submit" class="w-full bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">
+          Send Message
+        </button>
+      </form>
+    </div>
+
+    <div class="flex flex-col items-center space-y-4 md:space-y-6 mb-8 md:mb-12">
+      <div class="flex items-center space-x-2">
+        <img src="/images/email.png" alt="Email icon" class="w-8 h-8" />
+        <p>
+          <a href="mailto:examplemail@gmail.com" class="text-blue-500 hover:underline text-base md:text-lg">johnrengel@gmail.com</a>
+        </p>
+      </div>
+
+      <div class="flex items-center space-x-2">
+        <img src="/images/github.png" alt="Github icon" class="w-8 h-8" />
+        <p>
+          <a href="https://github.com/" class="text-blue-500 hover:underline text-base md:text-lg">Github</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+  <footer class="bg-black text-white text-center py-4">
+    <nav>
+      <ul class="flex justify-center space-x-4 mb-2">
+        <li><a href="#desktop-nav" class="hover:underline">Home</a></li>
+        <li><a href="#about" class="hover:underline">About</a></li>
+        <li><a href="#experience" class="hover:underline">Experience</a></li>
+        <li><a href="#projects" class="hover:underline">Projects</a></li>
+        <li><a href="#contact" class="hover:underline">Contact</a></li>
+      </ul>
+    </nav>
+    <p class="text-sm">Copyright &#169; 2024 John Rengel. All Rights Reserved.</p>
+  </footer>
+
+    <script src="/script.js"></script>
+  </body>
+</html>
